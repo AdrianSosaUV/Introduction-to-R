@@ -14,10 +14,6 @@
     * Series de tiempo
     * Listas
     * Data frames
-    - operaciones con arreglos
-    - operaciones con matrices
-    - operaciones conbinadas
-    - indexación de Matrices
 * Estructuras de control
     * IF
     * ELSE
