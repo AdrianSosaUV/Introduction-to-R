@@ -10,8 +10,10 @@
 * [Arreglos](https://github.com/AdrianSosaUV/Introduction-to-R/blob/master/Arreglos/Arreglos.pdf "Arreglos")
     * Vectores
     * Matrices
+    * Espresión
+    * Series de tiempo
     * Listas
-    * Tablas
+    * Data frames
     - operaciones con arreglos
     - operaciones con matrices
     - operaciones conbinadas
