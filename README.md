@@ -1,4 +1,4 @@
-# Manual para el curso de nivelación de R
+# Curso introductorio a R
 
 ## tabla de contenidos
 
@@ -7,7 +7,7 @@
     * Caracter
     * Complejo
     * Lógico
-* Arreglos
+* [Arreglos](https://github.com/AdrianSosaUV/Introduction-to-R/blob/master/Arreglos/Arreglos.pdf "Arreglos")
     * Vectores
     * Matrices
     * Listas
