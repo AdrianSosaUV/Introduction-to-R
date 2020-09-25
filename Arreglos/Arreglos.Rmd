@@ -1,0 +1,103 @@
+---
+title: "Programación Estadística"
+author:
+- name: Adrián Sosa
+- affiliation: Universidad Veracruzana
+# date: "25/9/2020"
+output:
+  pdf_document:
+    citation_package: natbib
+    keep_tex: yes
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ../svm-latex-ms.tex
+subtitle: Arreglos
+header-includes:
+  -  \usepackage{hyperref}
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 11pt
+# spacing: double
+endnote: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Arreglos 
+
+Existen diferentes tipos de datos dentro de los lenguajes de programación los más comunes son los siguientes:
+
+    * Numérico
+    * Caracter
+    * Complejo
+    * Lógico
+
+    
+Numérico: cualquier número entero o decimal, positivo o negativo.
+
+Caracter: cualquier tipo de información que sea texto, incluso los numeros pueden ser guardados como texto, este tipo de dato debe ser guardado entre comillas "". ejemplo("Esto es una cadena").
+
+Complejo: cualquier número complejo que tenga parte real e imaginaria.
+
+Lógico: es una variable lógica, solo puede admitir valores de True (Verdadero) o False (Falso).
+
+
+---
+Toda esta información debe ser almacenada de alguna manera para poder hacer operaciones con ella, una *Variable* se define como el espacio en la memoria donde se almacena la información.
+
+Para asignar un valor a una variable debemos utilizar la siguiente sintaxis:
+```{r var}
+x <- 10
+```
+
+Podemos ver el valor almacenado en la variable imprimiendo la variable:
+
+```{r print_var}
+print(x)
+```
+
+Para declarar una variable de tipo Numérico se ocupan los siguientes comandos:
+
+
+```{r num}
+x <- 10
+print(x)
+mode(x)
+```
+
+
+Para declarar una variable de tipo Caracter se ocupan los siguientes comandos:
+
+
+```{r str}
+x <- "Esto es una cadena"
+print(x)
+mode(x)
+```
+
+Para declarar una variable de tipo Complejo se ocupan los siguientes comandos:
+
+
+```{r complex}
+x <- 10 + 5i
+print(x)
+mode(x)
+```
+
+Para declarar una variable de tipo Lógica se ocupan los siguientes comandos:
+
+
+```{r boolean}
+x <- TRUE
+print(x)
+x <- FALSE
+print(x)
+mode(x)
+```
+
+
+
+
