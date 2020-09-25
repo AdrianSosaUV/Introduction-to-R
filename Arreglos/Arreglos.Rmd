@@ -32,7 +32,7 @@ Existen diferentes tipos de Arreglos datos los cuales se mencionan a continuaci�
 
     * Vectores
     * Matrices
-    * Espresión
+    * Expresión
     * Series de tiempo
     * Listas
     * Data frames
