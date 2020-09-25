@@ -2,7 +2,7 @@
 
 ## tabla de contenidos
 
-* ![Tipos de datos](https://github.com/AdrianSosaUV/Introduction-to-R/blob/master/Tipos%20de%20datos/Tipos-de-Datos.pdf)
+* [Tipos de datos](https://github.com/AdrianSosaUV/Introduction-to-R/blob/master/Tipos%20de%20datos/Tipos-de-Datos.pdf "Tipos de datos")
     * Numérico
     * Caracter
     * Complejo
