@@ -200,133 +200,64 @@
 \hypertarget{arreglos}{%
 \section{Arreglos}\label{arreglos}}
 
-Existen diferentes tipos de datos dentro de los lenguajes de
-programación los más comunes son los siguientes:
+Existen diferentes tipos de Arreglos datos los cuales se mencionan a
+continuación:
 
 \begin{verbatim}
-* Numérico
-* Caracter
-* Complejo
-* Lógico
+* Vectores
+* Matrices
+* Espresión
+* Series de tiempo
+* Listas
+* Data frames
 \end{verbatim}
 
-Numérico: cualquier número entero o decimal, positivo o negativo.
+\hypertarget{vector}{%
+\subsection{Vector}\label{vector}}
 
-Caracter: cualquier tipo de información que sea texto, incluso los
-numeros pueden ser guardados como texto, este tipo de dato debe ser
-guardado entre comillas "``. ejemplo(''Esto es una cadena").
-
-Complejo: cualquier número complejo que tenga parte real e imaginaria.
-
-Lógico: es una variable lógica, solo puede admitir valores de True
-(Verdadero) o False (Falso).
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-Toda esta información debe ser almacenada de alguna manera para poder
-hacer operaciones con ella, una \emph{Variable} se define como el
-espacio en la memoria donde se almacena la información.
-
-Para asignar un valor a una variable debemos utilizar la siguiente
-sintaxis:
+Es un conjunto de datos ya sea númericos, lógicos o de caracter
+dependiendo como sean especificados en el argumento \emph{mode}, conta
+de dos parametros ``mode'' y ``length'', este ultimo define la longitud
+del vector.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\DecValTok{10}
-\end{Highlighting}
-\end{Shaded}
-
-Podemos ver el valor almacenado en la variable imprimiendo la variable:
-
-\begin{Shaded}
-\begin{Highlighting}[]
+\CommentTok{# Vector(mode="logical", length=0)}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\DataTypeTok{mode=}\StringTok{"logical"}\NormalTok{, }\DataTypeTok{length=}\DecValTok{3}\NormalTok{)}
 \KeywordTok{print}\NormalTok{(x)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 10
+## [1] FALSE FALSE FALSE
 \end{verbatim}
 
-Para declarar una variable de tipo Numérico se ocupan los siguientes
-comandos:
+El argumento \emph{mode} puede adquirir los siguientes valores:
+
+\begin{verbatim}
+* any
+* list
+* expression
+* symbol
+* pairlist
+\end{verbatim}
+
+También puede ser utilizado en operadores lógicos de la siguiente
+manera:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\DecValTok{10}
-\KeywordTok{print}\NormalTok{(x)}
+\KeywordTok{as.vector}\NormalTok{(x, }\DataTypeTok{mode =} \StringTok{"any"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 10
+## [1] FALSE FALSE FALSE
 \end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mode}\NormalTok{(x)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "numeric"
-\end{verbatim}
-
-Para declarar una variable de tipo Caracter se ocupan los siguientes
-comandos:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ "Esto es una cadena"}
-\KeywordTok{print}\NormalTok{(x)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "Esto es una cadena"
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{mode}\NormalTok{(x)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "character"
-\end{verbatim}
-
-Para declarar una variable de tipo Complejo se ocupan los siguientes
-comandos:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\DecValTok{10} \OperatorTok{+}\StringTok{ }\NormalTok{5i}
-\KeywordTok{print}\NormalTok{(x)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 10+5i
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{mode}\NormalTok{(x)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "complex"
-\end{verbatim}
-
-Para declarar una variable de tipo Lógica se ocupan los siguientes
-comandos:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\OtherTok{TRUE}
-\KeywordTok{print}\NormalTok{(x)}
+\KeywordTok{is.vector}\NormalTok{(x, }\DataTypeTok{mode =} \StringTok{"any"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -334,26 +265,73 @@ comandos:
 ## [1] TRUE
 \end{verbatim}
 
+===
+
+\hypertarget{matriz}{%
+\subsection{Matriz}\label{matriz}}
+
+Una matriz es un vector con un atributo adicional (dim) el cual a su ves
+es un vector númerico de logitud 2, que define el número de filas y
+columnas de la matriz, el monado para quear este tipo de datos es
+\emph{matrix}:
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\OtherTok{FALSE}
+\CommentTok{# matrix(data = NA, nrow = 1, ncol = 1, byrow = FALSE, dimnames = NULL)}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DataTypeTok{data =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{nrow =} \DecValTok{2}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{2}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{dimnames =} \OtherTok{NULL}\NormalTok{)}
 \KeywordTok{print}\NormalTok{(x)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] FALSE
+##      [,1] [,2]
+## [1,]   NA   NA
+## [2,]   NA   NA
+\end{verbatim}
+
+Los argumentos operan de la siguiente manera:
+
+\begin{verbatim}
+* data - Recibe la información que formara parte de la matriz.
+* nrow - Número de filas. 
+* ncol - número de columnas.
+* byrow - indica si los valores en data deben llenar las columnas sucesivamente(FALSE) o las filas(TRUE)
+* dimnames - permite asignar nombres a las filas y columnas.
 \end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mode}\NormalTok{(x)}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DataTypeTok{data =} \DecValTok{1}\OperatorTok{:}\DecValTok{15}\NormalTok{, }\DataTypeTok{nrow =} \DecValTok{5}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{3}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{dimnames=} \KeywordTok{list}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"row1"}\NormalTok{,}\StringTok{"row2"}\NormalTok{,}\StringTok{"row3"}\NormalTok{,}\StringTok{"row4"}\NormalTok{,}\StringTok{"row5"}\NormalTok{),}\KeywordTok{c}\NormalTok{(}\StringTok{"C1"}\NormalTok{,}\StringTok{"C2"}\NormalTok{,}\StringTok{"C3"}\NormalTok{)))}
+\KeywordTok{print}\NormalTok{(x)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "logical"
+##      C1 C2 C3
+## row1  1  6 11
+## row2  2  7 12
+## row3  3  8 13
+## row4  4  9 14
+## row5  5 10 15
 \end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DataTypeTok{data =} \DecValTok{1}\OperatorTok{:}\DecValTok{15}\NormalTok{, }\DataTypeTok{nrow =} \DecValTok{5}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{3}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{dimnames=} \KeywordTok{list}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"row1"}\NormalTok{,}\StringTok{"row2"}\NormalTok{,}\StringTok{"row3"}\NormalTok{,}\StringTok{"row4"}\NormalTok{,}\StringTok{"row5"}\NormalTok{),}\KeywordTok{c}\NormalTok{(}\StringTok{"C1"}\NormalTok{,}\StringTok{"C2"}\NormalTok{,}\StringTok{"C3"}\NormalTok{)))}
+\KeywordTok{print}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      C1 C2 C3
+## row1  1  2  3
+## row2  4  5  6
+## row3  7  8  9
+## row4 10 11 12
+## row5 13 14 15
+\end{verbatim}
+
+===
 
 \newpage
 \singlespacing 

@@ -28,76 +28,66 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Arreglos 
 
-Existen diferentes tipos de datos dentro de los lenguajes de programación los más comunes son los siguientes:
+Existen diferentes tipos de Arreglos datos los cuales se mencionan a continuación:
 
-    * Numérico
-    * Caracter
-    * Complejo
-    * Lógico
+    * Vectores
+    * Matrices
+    * Espresión
+    * Series de tiempo
+    * Listas
+    * Data frames
 
+## Vector
+
+Es un conjunto de datos ya sea númericos, lógicos o de caracter dependiendo como sean especificados en el argumento *mode*, conta de dos parametros "mode" y "length", este ultimo define la longitud del vector.
+
+```{r vector}
+# Vector(mode="logical", length=0)
+x <- vector(mode="logical", length=3)
+print(x)
+```
+El argumento *mode* puede adquirir los siguientes valores:
+
+    * any
+    * list
+    * expression
+    * symbol
+    * pairlist
+
+También puede ser utilizado en operadores lógicos de la siguiente manera:
+
+```{r verctor_logic}
+as.vector(x, mode = "any")
+is.vector(x, mode = "any")
+``` 
+===
+
+## Matriz
+
+Una matriz es un vector con un atributo adicional (dim) el cual a su ves es un vector númerico de logitud 2, que define el número de filas y columnas de la matriz, el monado para quear este tipo de datos es *matrix*:
+
+```{r matrix}
+# matrix(data = NA, nrow = 1, ncol = 1, byrow = FALSE, dimnames = NULL)
+x <- matrix(data = NA, nrow = 2, ncol = 2, byrow = FALSE, dimnames = NULL)
+print(x)
+```
+Los argumentos operan de la siguiente manera:
+
+    * data - Recibe la información que formara parte de la matriz.
+    * nrow - Número de filas. 
+    * ncol - número de columnas.
+    * byrow - indica si los valores en data deben llenar las columnas sucesivamente(FALSE) o las filas(TRUE)
+    * dimnames - permite asignar nombres a las filas y columnas.
+
+
+```{r matrix_test0}
+x <- matrix(data = 1:15, nrow = 5, ncol = 3, byrow = FALSE, dimnames= list(c("row1","row2","row3","row4","row5"),c("C1","C2","C3")))
+print(x)
+``` 
+```{r matrix_test1}
+x <- matrix(data = 1:15, nrow = 5, ncol = 3, byrow = TRUE, dimnames= list(c("row1","row2","row3","row4","row5"),c("C1","C2","C3")))
+print(x)
+``` 
+===
     
-Numérico: cualquier número entero o decimal, positivo o negativo.
-
-Caracter: cualquier tipo de información que sea texto, incluso los numeros pueden ser guardados como texto, este tipo de dato debe ser guardado entre comillas "". ejemplo("Esto es una cadena").
-
-Complejo: cualquier número complejo que tenga parte real e imaginaria.
-
-Lógico: es una variable lógica, solo puede admitir valores de True (Verdadero) o False (Falso).
-
-
----
-Toda esta información debe ser almacenada de alguna manera para poder hacer operaciones con ella, una *Variable* se define como el espacio en la memoria donde se almacena la información.
-
-Para asignar un valor a una variable debemos utilizar la siguiente sintaxis:
-```{r var}
-x <- 10
-```
-
-Podemos ver el valor almacenado en la variable imprimiendo la variable:
-
-```{r print_var}
-print(x)
-```
-
-Para declarar una variable de tipo Numérico se ocupan los siguientes comandos:
-
-
-```{r num}
-x <- 10
-print(x)
-mode(x)
-```
-
-
-Para declarar una variable de tipo Caracter se ocupan los siguientes comandos:
-
-
-```{r str}
-x <- "Esto es una cadena"
-print(x)
-mode(x)
-```
-
-Para declarar una variable de tipo Complejo se ocupan los siguientes comandos:
-
-
-```{r complex}
-x <- 10 + 5i
-print(x)
-mode(x)
-```
-
-Para declarar una variable de tipo Lógica se ocupan los siguientes comandos:
-
-
-```{r boolean}
-x <- TRUE
-print(x)
-x <- FALSE
-print(x)
-mode(x)
-```
-
-
-
 
