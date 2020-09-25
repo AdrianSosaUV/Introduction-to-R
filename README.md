@@ -10,7 +10,7 @@
 * [Arreglos](https://github.com/AdrianSosaUV/Introduction-to-R/blob/master/Arreglos/Arreglos.pdf "Arreglos")
     * Vectores
     * Matrices
-    * Espresión
+    * Expresión
     * Series de tiempo
     * Listas
     * Data frames
