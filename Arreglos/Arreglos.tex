@@ -204,12 +204,12 @@ Existen diferentes tipos de Arreglos datos los cuales se mencionan a
 continuación:
 
 \begin{verbatim}
-* Vectores
-* Matrices
-* Espresión
+* Vector
+* Matriz
+* Data frame
+* Lista
 * Series de tiempo
-* Listas
-* Data frames
+* Expresiones
 \end{verbatim}
 
 \hypertarget{vector}{%
@@ -265,7 +265,7 @@ manera:
 ## [1] TRUE
 \end{verbatim}
 
-===
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{matriz}{%
 \subsection{Matriz}\label{matriz}}
@@ -331,7 +331,300 @@ Los argumentos operan de la siguiente manera:
 ## row5 13 14 15
 \end{verbatim}
 
-===
+\hypertarget{operaciones-con-matrices}{%
+\subsubsection{Operaciones con
+matrices}\label{operaciones-con-matrices}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{25}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\OtherTok{FALSE}\NormalTok{)}
+\NormalTok{y <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{25}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{x}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    6   11   16   21
+## [2,]    2    7   12   17   22
+## [3,]    3    8   13   18   23
+## [4,]    4    9   14   19   24
+## [5,]    5   10   15   20   25
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    2    3    4    5
+## [2,]    6    7    8    9   10
+## [3,]   11   12   13   14   15
+## [4,]   16   17   18   19   20
+## [5,]   21   22   23   24   25
+\end{verbatim}
+
+\hypertarget{suma}{%
+\paragraph{Suma}\label{suma}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{+}\StringTok{ }\NormalTok{y}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    2    8   14   20   26
+## [2,]    8   14   20   26   32
+## [3,]   14   20   26   32   38
+## [4,]   20   26   32   38   44
+## [5,]   26   32   38   44   50
+\end{verbatim}
+
+\hypertarget{resta}{%
+\paragraph{Resta}\label{resta}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{-}\StringTok{ }\NormalTok{y}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    0    4    8   12   16
+## [2,]   -4    0    4    8   12
+## [3,]   -8   -4    0    4    8
+## [4,]  -12   -8   -4    0    4
+## [5,]  -16  -12   -8   -4    0
+\end{verbatim}
+
+\hypertarget{multiplicaciuxf3n}{%
+\paragraph{Multiplicación}\label{multiplicaciuxf3n}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{*}\StringTok{ }\NormalTok{y}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1   12   33   64  105
+## [2,]   12   49   96  153  220
+## [3,]   33   96  169  252  345
+## [4,]   64  153  252  361  480
+## [5,]  105  220  345  480  625
+\end{verbatim}
+
+\hypertarget{diviciuxf3n}{%
+\paragraph{Divición}\label{diviciuxf3n}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{/}\StringTok{ }\NormalTok{y}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           [,1]      [,2]      [,3]      [,4]     [,5]
+## [1,] 1.0000000 3.0000000 3.6666667 4.0000000 4.200000
+## [2,] 0.3333333 1.0000000 1.5000000 1.8888889 2.200000
+## [3,] 0.2727273 0.6666667 1.0000000 1.2857143 1.533333
+## [4,] 0.2500000 0.5294118 0.7777778 1.0000000 1.200000
+## [5,] 0.2380952 0.4545455 0.6521739 0.8333333 1.000000
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{marco-de-datos}{%
+\subsection{Marco de datos}\label{marco-de-datos}}
+
+Un marco de datos o ``Data.frame'' se crea de manera implítica con la
+función \emph{read.table}, de igual manera es posible hacerlo con la
+función \emph{data.frame}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{4}
+\NormalTok{n <-}\StringTok{ }\DecValTok{10}
+\KeywordTok{data.frame}\NormalTok{(x,n)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   x  n
+## 1 1 10
+## 2 2 10
+## 3 3 10
+## 4 4 10
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{lista}{%
+\subsection{Lista}\label{lista}}
+
+Una lista se crea de manera similar a un marco de datos por medio d ela
+función \emph{list}, puede incluir cualquier tipo de objetos, a
+diferencia del \emph{data.frame} los nombres de los objetos no se toman
+por defecto.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{L <-}\StringTok{ }\KeywordTok{list}\NormalTok{(x,n)}
+\NormalTok{L}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] 1 2 3 4
+## 
+## [[2]]
+## [1] 10
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{series-de-tiempo}{%
+\subsection{Series de tiempo}\label{series-de-tiempo}}
+
+La función \emph{ts} crea un objeto de clase ``ts'' (serie de tiempo) a
+partir de un vector( serie de tiempo única) o una matriz(serie
+multivariada). los argumentos que recibe son:
+
+\begin{verbatim}
+ts(data= NA, start=1, end= numeric(0), frecuency=1, detat= 1, ts.sps= 
+getOption("ts.eps"), class, names)
+
+    * data      -   Un Vector o matriz
+    * start     -   El tiempo en la primera observación ya sea un número o un vector
+                    con dos enteros
+    * end       -   El tiempo de la última observación especificado de la misma 
+                    manera que *start*
+    * frequency -   El número de observaciones por unidad de tiempo
+    * deltat    -   Fracción del periodo de muestreo entre observaciones sucesivas 
+                    **solo especificar "frequency" o "deltat" **   
+    * ts.eps    -   Tolerancia para la comparación de series
+    * class     -   Clase asignada el objeto
+    * names     -   Para una serie multivariada, un vector de tipo caracter con los
+                    nombres de las series individuales
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ts}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{, }\DataTypeTok{start=}\DecValTok{1959}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Time Series:
+## Start = 1959 
+## End = 1968 
+## Frequency = 1 
+##  [1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ts}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{50}\NormalTok{, }\DataTypeTok{frequency=} \DecValTok{12}\NormalTok{, }\DataTypeTok{start=}\KeywordTok{c}\NormalTok{(}\DecValTok{1959}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+## 1959       1   2   3   4   5   6   7   8   9  10  11
+## 1960  12  13  14  15  16  17  18  19  20  21  22  23
+## 1961  24  25  26  27  28  29  30  31  32  33  34  35
+## 1962  36  37  38  39  40  41  42  43  44  45  46  47
+## 1963  48  49  50
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ts}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{, }\DataTypeTok{frequency=} \DecValTok{4}\NormalTok{, }\DataTypeTok{start=}\KeywordTok{c}\NormalTok{(}\DecValTok{1959}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      Qtr1 Qtr2 Qtr3 Qtr4
+## 1959         1    2    3
+## 1960    4    5    6    7
+## 1961    8    9   10
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{expresiones}{%
+\subsection{Expresiones}\label{expresiones}}
+
+Los objetos de la clase \emph{expresión} son de gran importancia en R.
+Euna \emph{expresión} es una serie de caraacteres que hacen sentido para
+R, los comandos de R son puramente expresiónes, cuando se escribe un
+comando este es evaluado por R y ejecutado si resulta válido.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{3}\NormalTok{; y <-}\StringTok{ }\FloatTok{2.5}\NormalTok{; z <-}\StringTok{ }\DecValTok{1}
+\NormalTok{exp1 <-}\StringTok{ }\KeywordTok{expression}\NormalTok{(x}\OperatorTok{/}\NormalTok{(y}\OperatorTok{+}\StringTok{ }\KeywordTok{exp}\NormalTok{(z)))}
+\NormalTok{exp1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## expression(x/(y + exp(z)))
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{eval}\NormalTok{(exp1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.5749019
+\end{verbatim}
+
+Las expresiones se pueden usar, entre otras cosas, para incluir
+ecuaciones en graficos o como argumentos en ciertas funciones, por
+ejemplo \emph{D()} que calcula derivadas aprciales:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{D}\NormalTok{(exp1,}\StringTok{"x"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 1/(y + exp(z))
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{D}\NormalTok{(exp1,}\StringTok{"y"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -(x/(y + exp(z))^2)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{D}\NormalTok{(exp1,}\StringTok{"z"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -(x * exp(z)/(y + exp(z))^2)
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \newpage
 \singlespacing 

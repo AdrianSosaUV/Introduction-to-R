@@ -30,12 +30,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Existen diferentes tipos de Arreglos datos los cuales se mencionan a continuación:
 
-    * Vectores
-    * Matrices
-    * Expresión
+    * Vector
+    * Matriz
+    * Data frame
+    * Lista
     * Series de tiempo
-    * Listas
-    * Data frames
+    * Expresiones
 
 ## Vector
 
@@ -60,7 +60,8 @@ También puede ser utilizado en operadores lógicos de la siguiente manera:
 as.vector(x, mode = "any")
 is.vector(x, mode = "any")
 ``` 
-===
+---
+
 
 ## Matriz
 
@@ -87,7 +88,115 @@ print(x)
 ```{r matrix_test1}
 x <- matrix(data = 1:15, nrow = 5, ncol = 3, byrow = TRUE, dimnames= list(c("row1","row2","row3","row4","row5"),c("C1","C2","C3")))
 print(x)
-``` 
-===
+```
+
+### Operaciones con matrices
+
+```{r definicion}
+x <- matrix(1:25, 5, 5, FALSE)
+y <- matrix(1:25, 5, 5, TRUE)
+x
+y
+```
+
+#### Suma
+
+
+```{r suma}
+x + y
+```
+
+#### Resta
+
+
+```{r resta}
+x - y
+```
+
+#### Multiplicación
+
+
+```{r multi}
+x * y
+```
+
+#### Divición
+
+
+```{r div}
+x / y
+```
+---
     
 
+
+## Marco de datos
+
+Un marco de datos o "Data.frame" se crea de manera implítica con la función *read.table*, de igual manera es posible hacerlo con la función *data.frame*.
+
+```{r data_frame}
+x <- 1:4
+n <- 10
+data.frame(x,n)
+```
+
+---
+
+## Lista
+
+Una lista se crea de manera similar a un marco de datos por medio d ela función *list*, puede incluir cualquier tipo de objetos, a diferencia del *data.frame* los nombres de los objetos no se toman por defecto.
+
+
+```{r list}
+L <- list(x,n)
+L
+```
+
+---
+
+## Series de tiempo
+
+La función *ts* crea un objeto de clase "ts" (serie de tiempo) a partir de un vector( serie de tiempo única) o una matriz(serie multivariada). los argumentos que recibe son:
+
+    ts(data= NA, start=1, end= numeric(0), frecuency=1, detat= 1, ts.sps= 
+    getOption("ts.eps"), class, names)
+
+        * data      -   Un Vector o matriz
+        * start     -   El tiempo en la primera observación ya sea un número o un vector
+                        con dos enteros
+        * end       -   El tiempo de la última observación especificado de la misma 
+                        manera que *start*
+        * frequency -   El número de observaciones por unidad de tiempo
+        * deltat    -   Fracción del periodo de muestreo entre observaciones sucesivas 
+                        **solo especificar "frequency" o "deltat" **   
+        * ts.eps    -   Tolerancia para la comparación de series
+        * class     -   Clase asignada el objeto
+        * names     -   Para una serie multivariada, un vector de tipo caracter con los
+                        nombres de las series individuales
+
+
+```{r ts}
+ts(1:10, start=1959)
+ts(1:50, frequency= 12, start=c(1959,2))
+ts(1:10, frequency= 4, start=c(1959,2))
+```
+---
+
+## Expresiones
+
+Los objetos de la clase *expresión* son de gran importancia en R. Euna *expresión* es una serie de caraacteres que hacen sentido para R, los comandos de R son puramente expresiónes, cuando se escribe un comando este es evaluado por R y ejecutado si resulta válido.
+
+```{r exp}
+x <- 3; y <- 2.5; z <- 1
+exp1 <- expression(x/(y+ exp(z)))
+exp1
+eval(exp1)
+```
+Las expresiones se pueden usar, entre otras cosas, para incluir ecuaciones en graficos o como argumentos en ciertas funciones, por ejemplo *D()* que calcula derivadas aprciales:
+
+```{r exp_eval}
+D(exp1,"x")
+D(exp1,"y")
+D(exp1,"z")
+```
+---
