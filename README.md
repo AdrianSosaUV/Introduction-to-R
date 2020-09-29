@@ -8,12 +8,12 @@
     * Complejo
     * Lógico
 * [Arreglos](https://github.com/AdrianSosaUV/Introduction-to-R/blob/master/Arreglos/Arreglos.pdf "Arreglos")
-    * Vectores
-    * Matrices
-    * Expresión
+    * Vector
+    * Matriz
+    * Data frame
+    * Lista
     * Series de tiempo
-    * Listas
-    * Data frames
+    * Expresiones
 * Estructuras de control
     * IF
     * ELSE
