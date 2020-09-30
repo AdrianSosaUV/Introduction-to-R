@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.25)  30 SEP 2020 13:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.25)  30 SEP 2020 13:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -487,26 +487,32 @@ een already used, duplicate ignored
                    \relax 
 l.504 }
        
+<../schemas/REPEAT.png, id=49, 180.675pt x 293.095pt>
+File: ../schemas/REPEAT.png Graphic file (type png)
+<use ../schemas/REPEAT.png>
+Package pdftex.def Info: ../schemas/REPEAT.png  used on input line 504.
+(pdftex.def)             Requested size: 120.2852pt x 195.12933pt.
+[5 <../schemas/WHILE.png>]
 
-LaTeX Warning: File `../schemas/REPEAT.png' not found on input line 504.
+LaTeX Warning: File `../schemas/BREAK.png' not found on input line 543.
 
 
-! Package pdftex.def Error: File `../schemas/REPEAT.png' not found: using draft
- setting.
+! Package pdftex.def Error: File `../schemas/BREAK.png' not found: using draft 
+setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.504 }
-        
+l.543 ...K.png}}{Ciclo BREAK}}\label{ciclo-break}}
+                                                   
 Here is how much of TeX's memory you used:
- 7078 strings out of 482823
- 110105 string characters out of 5954338
+ 7088 strings out of 482823
+ 110254 string characters out of 5954338
  378204 words of memory out of 5000000
- 22288 multiletter control sequences out of 15000+600000
+ 22293 multiletter control sequences out of 15000+600000
  548252 words of font info for 46 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 43i,6n,37p,227b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,6n,40p,227b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 !  ==> Fatal error occurred, no output PDF file produced!

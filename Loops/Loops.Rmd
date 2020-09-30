@@ -212,7 +212,7 @@ Para deter el ciclo *repeat* es necesario establecer una condición para el coma
 
 El comando *break* puede ser utilizado por los ciclos *for*, *while* y *repeat*, su ejecución finaliza el bucle mas proximo en el que se encuentre. El diagrama de flujo muestra su ejecución:
 
-![Ciclo BREAK](../schemas/BREAK.png){#id .class width=50% height=30%} 
+# ![Ciclo BREAK](../schemas/BREAK.png){#id .class width=50% height=30%} 
 
 Un ejemplo de ejecución seria el siguiente:
 
