@@ -31,18 +31,18 @@ knitr::opts_chunk$set(echo = TRUE)
 Existen diferentes tipos de datos dentro de los lenguajes de programación los más comunes son los siguientes:
 
     * Numérico
-    * Caracter
+    * Carácter
     * Complejo
     * Lógico
 
     
 Numérico: cualquier número entero o decimal, positivo o negativo.
 
-Caracter: cualquier tipo de información que sea texto, incluso los numeros pueden ser guardados como texto, este tipo de dato debe ser guardado entre comillas "". ejemplo("Esto es una cadena").
+Carácter: cualquier tipo de información que sea texto, incluso los números pueden ser guardados como texto, este tipo de dato debe ser guardado entre comillas "". Ejemplo("Esto es una cadena").
 
 Complejo: cualquier número complejo que tenga parte real e imaginaria.
 
-Lógico: es una variable lógica, solo puede admitir valores de True (Verdadero) o False (Falso).
+Lógico: es una variable lógica, sólo puede admitir valores de True (Verdadero) o False (Falso).
 
 
 ---
@@ -69,7 +69,7 @@ mode(x)
 ```
 
 
-Para declarar una variable de tipo Caracter se ocupan los siguientes comandos:
+Para declarar una variable de tipo Carácter se ocupan los siguientes comandos:
 
 
 ```{r str}
