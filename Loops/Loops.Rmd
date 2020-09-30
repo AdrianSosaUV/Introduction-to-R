@@ -182,3 +182,56 @@ while (n < 50 ){
   print(n)
 }
 ```
+
+## REPEAT
+
+El bucle *repeat* es muy similiar a *while* excepto que el bloque de instrucciones es ejecutado por lo menos una vez, sin importar el resultado de la condición.
+
+En el diagrama de flujo vemos su operación.
+
+ ![Ciclo REPEAT](../schemas/REPEAT.png){#id .class width=50% height=30%} 
+
+Un ejemplo de ejecución seria el siguiente:
+
+
+```{r repeat_sample0}
+n <- 1
+repeat {
+  if(n <= 5){
+    print(n)
+    n <- n +1 
+  }else{
+    break
+  }
+}
+```
+
+Para deter el ciclo *repeat* es necesario establecer una condición para el comando *break*, este comando se utiliza para salir de los bucles infinitos. 
+
+## BREAK
+
+El comando *break* puede ser utilizado por los ciclos *for*, *while* y *repeat*, su ejecución finaliza el bucle mas proximo en el que se encuentre. El diagrama de flujo muestra su ejecución:
+
+![Ciclo BREAK](../schemas/BREAK.png){#id .class width=50% height=30%} 
+
+Un ejemplo de ejecución seria el siguiente:
+
+```{r break_sample0}
+# creamos una matriz de 5*5
+m <-  matrix(1:25,5,5)
+m
+
+#cambiamos a 0 todos los números pares
+for(i in 1:nrow(m)){
+  for(j in 1:ncol(m)){
+    if(m[i,j]%%2 == 0){
+      if(m[i,j] >= 20){
+        break
+      }
+      m[i,j] <- 0
+    }
+  } 
+}
+# imprimimos la nueva matriz
+m
+```

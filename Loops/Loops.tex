@@ -280,11 +280,6 @@ evaluara:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## [1] "Este mensaje tiene un 50% de probabilidades de ser mostrado"
-## [1] 0.5059046
-\end{verbatim}
-
 \hypertarget{else}{%
 \subsection{ELSE}\label{else}}
 
@@ -327,7 +322,7 @@ Su ejecución seria de la siguiente manera:
 \end{Shaded}
 
 \begin{verbatim}
-## 0.0601800105068833 < 0.5
+## 0.089176022214815 < 0.5
 \end{verbatim}
 
 Las estructuras de control lógicas \emph{If} y \emph{If-else} permiten
@@ -405,7 +400,7 @@ Algunos ejemplos serian los siguientes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 24.94
+## [1] 25.24
 \end{verbatim}
 
 Con el ejemplo anterior podemos mejorarlo introduciendo un ciclo
@@ -429,7 +424,7 @@ condicional para ver un ejemplo de anidación.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 25.63
+## [1] 23.96
 \end{verbatim}
 
 \hypertarget{while}{%
@@ -490,6 +485,112 @@ Un ejemplo de ello serian los siguientes:
 ## [1] 5
 ## [1] 17
 ## [1] 53
+\end{verbatim}
+
+\hypertarget{repeat}{%
+\subsection{REPEAT}\label{repeat}}
+
+El bucle \emph{repeat} es muy similiar a \emph{while} excepto que el
+bloque de instrucciones es ejecutado por lo menos una vez, sin importar
+el resultado de la condición.
+
+En el diagrama de flujo vemos su operación.
+
+\begin{figure}
+\hypertarget{id}{%
+\centering
+\includegraphics[width=0.5\textwidth,height=0.3\textheight]{../schemas/REPEAT.png}
+\caption{Ciclo REPEAT}\label{id}
+}
+\end{figure}
+
+Un ejemplo de ejecución seria el siguiente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n <-}\StringTok{ }\DecValTok{1}
+\ControlFlowTok{repeat}\NormalTok{ \{}
+  \ControlFlowTok{if}\NormalTok{(n }\OperatorTok{<=}\StringTok{ }\DecValTok{5}\NormalTok{)\{}
+    \KeywordTok{print}\NormalTok{(n)}
+\NormalTok{    n <-}\StringTok{ }\NormalTok{n }\OperatorTok{+}\DecValTok{1} 
+\NormalTok{  \}}\ControlFlowTok{else}\NormalTok{\{}
+    \ControlFlowTok{break}
+\NormalTok{  \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+\end{verbatim}
+
+Para deter el ciclo \emph{repeat} es necesario establecer una condición
+para el comando \emph{break}, este comando se utiliza para salir de los
+bucles infinitos.
+
+\hypertarget{break}{%
+\subsection{BREAK}\label{break}}
+
+El comando \emph{break} puede ser utilizado por los ciclos \emph{for},
+\emph{while} y \emph{repeat}, su ejecución finaliza el bucle mas proximo
+en el que se encuentre. El diagrama de flujo muestra su ejecución:
+
+\begin{figure}
+\hypertarget{id}{%
+\centering
+\includegraphics[width=0.5\textwidth,height=0.3\textheight]{../schemas/BREAK.png}
+\caption{Ciclo BREAK}\label{id}
+}
+\end{figure}
+
+Un ejemplo de ejecución seria el siguiente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# creamos una matriz de 5*5}
+\NormalTok{m <-}\StringTok{  }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{25}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\NormalTok{m}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    6   11   16   21
+## [2,]    2    7   12   17   22
+## [3,]    3    8   13   18   23
+## [4,]    4    9   14   19   24
+## [5,]    5   10   15   20   25
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#cambiamos a 0 todos los números pares}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(m))\{}
+  \ControlFlowTok{for}\NormalTok{(j }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{ncol}\NormalTok{(m))\{}
+    \ControlFlowTok{if}\NormalTok{(m[i,j]}\OperatorTok{%%}\DecValTok{2} \OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{)\{}
+      \ControlFlowTok{if}\NormalTok{(m[i,j] }\OperatorTok{>=}\StringTok{ }\DecValTok{20}\NormalTok{)\{}
+        \ControlFlowTok{break}
+\NormalTok{      \}}
+\NormalTok{      m[i,j] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{    \}}
+\NormalTok{  \} }
+\NormalTok{\}}
+\CommentTok{# imprimimos la nueva matriz}
+\NormalTok{m}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    0   11    0   21
+## [2,]    0    7    0   17   22
+## [3,]    3    0   13    0   23
+## [4,]    0    9    0   19   24
+## [5,]    5    0   15   20   25
 \end{verbatim}
 
 \newpage

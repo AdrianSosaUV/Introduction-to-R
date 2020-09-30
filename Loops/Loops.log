@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.25)  30 SEP 2020 11:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.25)  30 SEP 2020 13:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -452,39 +452,61 @@ tex.map} <../schemas/IF.png>]pdfTeX warning (ext4): destination with the same i
 dentifier (name{id}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.301 }
+l.296 }
        
 <../schemas/ELSE.png, id=23, 255.95625pt x 353.32pt>
 File: ../schemas/ELSE.png Graphic file (type png)
 <use ../schemas/ELSE.png>
-Package pdftex.def Info: ../schemas/ELSE.png  used on input line 301.
+Package pdftex.def Info: ../schemas/ELSE.png  used on input line 296.
 (pdftex.def)             Requested size: 141.35829pt x 195.12988pt.
 [2 <../schemas/ELSE.png>]pdfTeX warning (ext4): destination with the same ident
 ifier (name{id}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.349 }
+l.344 }
+       
+<../schemas/FOR.png, id=32, 332.24126pt x 323.2075pt>
+File: ../schemas/FOR.png Graphic file (type png)
+<use ../schemas/FOR.png>
+Package pdftex.def Info: ../schemas/FOR.png  used on input line 344.
+(pdftex.def)             Requested size: 200.58325pt x 195.12933pt.
+[3 <../schemas/FOR.png>]pdfTeX warning (ext4): destination with the same identi
+fier (name{id}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.443 }
+       
+<../schemas/WHILE.png, id=41, 260.975pt x 293.095pt>
+File: ../schemas/WHILE.png Graphic file (type png)
+<use ../schemas/WHILE.png>
+Package pdftex.def Info: ../schemas/WHILE.png  used on input line 443.
+(pdftex.def)             Requested size: 173.7453pt x 195.12933pt.
+[4]pdfTeX warning (ext4): destination with the same identifier (name{id}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.504 }
        
 
-LaTeX Warning: File `../schemas/FOR.png' not found on input line 349.
+LaTeX Warning: File `../schemas/REPEAT.png' not found on input line 504.
 
 
-! Package pdftex.def Error: File `../schemas/FOR.png' not found: using draft se
-tting.
+! Package pdftex.def Error: File `../schemas/REPEAT.png' not found: using draft
+ setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.349 }
+l.504 }
         
 Here is how much of TeX's memory you used:
- 7057 strings out of 482823
- 109727 string characters out of 5954338
- 377204 words of memory out of 5000000
- 22277 multiletter control sequences out of 15000+600000
- 547936 words of font info for 45 fonts, out of 8000000 for 9000
+ 7078 strings out of 482823
+ 110105 string characters out of 5954338
+ 378204 words of memory out of 5000000
+ 22288 multiletter control sequences out of 15000+600000
+ 548252 words of font info for 46 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 43i,6n,37p,227b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,6n,37p,227b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 !  ==> Fatal error occurred, no output PDF file produced!
