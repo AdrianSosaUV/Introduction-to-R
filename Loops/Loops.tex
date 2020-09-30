@@ -40,6 +40,15 @@
 \setcounter{secnumdepth}{0}
 
 
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 
 \title{Programación Estadística: Estructuras de control (ciclos)  }
@@ -180,6 +189,17 @@ Su estructura es la siguiente:
         Bloque de código
     }
 \end{verbatim}
+
+En el siguiente diagrama de flujo se muestra como opera la función
+\emph{IF}:
+
+\begin{figure}
+\hypertarget{id}{%
+\centering
+\includegraphics[width=0.5\textwidth,height=0.3\textheight]{../schemas/IF.png}
+\caption{Ciclo IF}\label{id}
+}
+\end{figure}
 
 \newpage
 \singlespacing 

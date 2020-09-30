@@ -39,3 +39,9 @@ Su estructura es la siguiente:
 		if(<condicion>){
 			Bloque de código
 		}
+
+En el siguiente diagrama de flujo se muestra como opera la función *IF*:
+
+![Ciclo IF](../schemas/IF.png){#id .class width=50% height=30%}
+
+
