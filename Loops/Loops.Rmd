@@ -1,0 +1,41 @@
+---
+title: "Programación Estadística"
+author:
+- name: Adrián Sosa
+- affiliation: Universidad Veracruzana
+# date: "25/9/2020"
+output:
+  pdf_document:
+    citation_package: natbib
+    keep_tex: yes
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ../svm-latex-ms.tex
+subtitle: Estructuras de control (ciclos)
+header-includes:
+  -  \usepackage{hyperref}
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 11pt
+# spacing: double
+endnote: no
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Ciclos
+
+*R* posee una gran ventaja respecto a otros lenguajes de programación, devido a que se puede programar de manera sencilla una serie de análisis que se ejecuten de manera sucesiva, a este tipo de estructuras se les conoce como *estructuras de control* las cuales se describiran a continuación:
+
+## IF
+
+El comando *IF* ("si" condicional en inglés) permite evaluar una expresión y sobre el resultado (VERDADERO o FALSO) ejecutar un bloque de instrucciones.
+
+Su estructura es la siguiente:
+
+		if(<condicion>){
+			Bloque de código
+		}
