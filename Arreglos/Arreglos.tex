@@ -200,8 +200,8 @@
 \hypertarget{arreglos}{%
 \section{Arreglos}\label{arreglos}}
 
-Existen diferentes tipos de Arreglos datos los cuales se mencionan a
-continuación:
+Existen diferentes tipos de \emph{arreglos de datos} los cuales se
+mencionan a continuación:
 
 \begin{verbatim}
 * Vector
@@ -215,9 +215,9 @@ continuación:
 \hypertarget{vector}{%
 \subsection{Vector}\label{vector}}
 
-Es un conjunto de datos ya sea númericos, lógicos o de caracter
-dependiendo como sean especificados en el argumento \emph{mode}, conta
-de dos parametros ``mode'' y ``length'', este ultimo define la longitud
+Es un conjunto de datos ya sea númericos, lógicos o de carácter
+dependiendo como sean especificados en el argumento \emph{mode}, consta
+de dos parametros ``mode'' y ``length'', este último define la longitud
 del vector.
 
 \begin{Shaded}
@@ -272,7 +272,7 @@ manera:
 
 Una matriz es un vector con un atributo adicional (dim) el cual a su ves
 es un vector númerico de logitud 2, que define el número de filas y
-columnas de la matriz, el monado para quear este tipo de datos es
+columnas de la matriz, el comando para crear este tipo de datos es
 \emph{matrix}:
 
 \begin{Shaded}
@@ -421,8 +421,8 @@ matrices}\label{operaciones-con-matrices}}
 ## [5,]  105  220  345  480  625
 \end{verbatim}
 
-\hypertarget{diviciuxf3n}{%
-\paragraph{Divición}\label{diviciuxf3n}}
+\hypertarget{divisiuxf3n}{%
+\paragraph{División}\label{divisiuxf3n}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -444,7 +444,7 @@ matrices}\label{operaciones-con-matrices}}
 \hypertarget{marco-de-datos}{%
 \subsection{Marco de datos}\label{marco-de-datos}}
 
-Un marco de datos o ``Data.frame'' se crea de manera implítica con la
+Un marco de datos o ``Data.frame'' se crea de manera implícita con la
 función \emph{read.table}, de igual manera es posible hacerlo con la
 función \emph{data.frame}.
 
@@ -496,7 +496,7 @@ por defecto.
 
 La función \emph{ts} crea un objeto de clase ``ts'' (serie de tiempo) a
 partir de un vector( serie de tiempo única) o una matriz(serie
-multivariada). los argumentos que recibe son:
+multivariada). Los argumentos que recibe son:
 
 \begin{verbatim}
 ts(data= NA, start=1, end= numeric(0), frecuency=1, detat= 1, ts.sps= 
@@ -512,7 +512,7 @@ getOption("ts.eps"), class, names)
                     **solo especificar "frequency" o "deltat" **   
     * ts.eps    -   Tolerancia para la comparación de series
     * class     -   Clase asignada el objeto
-    * names     -   Para una serie multivariada, un vector de tipo caracter con los
+    * names     -   Para una serie multivariada, un vector de tipo carácter con los
                     nombres de las series individuales
 \end{verbatim}
 
@@ -564,7 +564,7 @@ getOption("ts.eps"), class, names)
 \subsection{Expresiones}\label{expresiones}}
 
 Los objetos de la clase \emph{expresión} son de gran importancia en R.
-Euna \emph{expresión} es una serie de caraacteres que hacen sentido para
+Una \emph{expresión} es una serie de caraacteres que hacen sentido para
 R, los comandos de R son puramente expresiónes, cuando se escribe un
 comando este es evaluado por R y ejecutado si resulta válido.
 
@@ -591,8 +591,8 @@ comando este es evaluado por R y ejecutado si resulta válido.
 \end{verbatim}
 
 Las expresiones se pueden usar, entre otras cosas, para incluir
-ecuaciones en graficos o como argumentos en ciertas funciones, por
-ejemplo \emph{D()} que calcula derivadas aprciales:
+ecuaciones en gráficos o como argumentos en ciertas funciones, por
+ejemplo \emph{D()} que calcula derivadas parciales:
 
 \begin{Shaded}
 \begin{Highlighting}[]

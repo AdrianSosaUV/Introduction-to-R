@@ -28,7 +28,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Arreglos 
 
-Existen diferentes tipos de Arreglos datos los cuales se mencionan a continuación:
+Existen diferentes tipos de *arreglos de datos* los cuales se mencionan a continuación:
 
     * Vector
     * Matriz
@@ -39,7 +39,7 @@ Existen diferentes tipos de Arreglos datos los cuales se mencionan a continuaci�
 
 ## Vector
 
-Es un conjunto de datos ya sea númericos, lógicos o de caracter dependiendo como sean especificados en el argumento *mode*, conta de dos parametros "mode" y "length", este ultimo define la longitud del vector.
+Es un conjunto de datos ya sea númericos, lógicos o de carácter dependiendo como sean especificados en el argumento *mode*, consta de dos parametros "mode" y "length", este último define la longitud del vector.
 
 ```{r vector}
 # Vector(mode="logical", length=0)
@@ -65,7 +65,7 @@ is.vector(x, mode = "any")
 
 ## Matriz
 
-Una matriz es un vector con un atributo adicional (dim) el cual a su ves es un vector númerico de logitud 2, que define el número de filas y columnas de la matriz, el monado para quear este tipo de datos es *matrix*:
+Una matriz es un vector con un atributo adicional (dim) el cual a su ves es un vector númerico de logitud 2, que define el número de filas y columnas de la matriz, el comando para crear este tipo de datos es *matrix*:
 
 ```{r matrix}
 # matrix(data = NA, nrow = 1, ncol = 1, byrow = FALSE, dimnames = NULL)
@@ -120,7 +120,7 @@ x - y
 x * y
 ```
 
-#### Divición
+#### División
 
 
 ```{r div}
@@ -132,7 +132,7 @@ x / y
 
 ## Marco de datos
 
-Un marco de datos o "Data.frame" se crea de manera implítica con la función *read.table*, de igual manera es posible hacerlo con la función *data.frame*.
+Un marco de datos o "Data.frame" se crea de manera implícita con la función *read.table*, de igual manera es posible hacerlo con la función *data.frame*.
 
 ```{r data_frame}
 x <- 1:4
@@ -156,7 +156,7 @@ L
 
 ## Series de tiempo
 
-La función *ts* crea un objeto de clase "ts" (serie de tiempo) a partir de un vector( serie de tiempo única) o una matriz(serie multivariada). los argumentos que recibe son:
+La función *ts* crea un objeto de clase "ts" (serie de tiempo) a partir de un vector( serie de tiempo única) o una matriz(serie multivariada). Los argumentos que recibe son:
 
     ts(data= NA, start=1, end= numeric(0), frecuency=1, detat= 1, ts.sps= 
     getOption("ts.eps"), class, names)
@@ -171,7 +171,7 @@ La función *ts* crea un objeto de clase "ts" (serie de tiempo) a partir de un v
                         **solo especificar "frequency" o "deltat" **   
         * ts.eps    -   Tolerancia para la comparación de series
         * class     -   Clase asignada el objeto
-        * names     -   Para una serie multivariada, un vector de tipo caracter con los
+        * names     -   Para una serie multivariada, un vector de tipo carácter con los
                         nombres de las series individuales
 
 
@@ -184,7 +184,7 @@ ts(1:10, frequency= 4, start=c(1959,2))
 
 ## Expresiones
 
-Los objetos de la clase *expresión* son de gran importancia en R. Euna *expresión* es una serie de caraacteres que hacen sentido para R, los comandos de R son puramente expresiónes, cuando se escribe un comando este es evaluado por R y ejecutado si resulta válido.
+Los objetos de la clase *expresión* son de gran importancia en R. Una *expresión* es una serie de caraacteres que hacen sentido para R, los comandos de R son puramente expresiónes, cuando se escribe un comando este es evaluado por R y ejecutado si resulta válido.
 
 ```{r exp}
 x <- 3; y <- 2.5; z <- 1
@@ -192,7 +192,7 @@ exp1 <- expression(x/(y+ exp(z)))
 exp1
 eval(exp1)
 ```
-Las expresiones se pueden usar, entre otras cosas, para incluir ecuaciones en graficos o como argumentos en ciertas funciones, por ejemplo *D()* que calcula derivadas aprciales:
+Las expresiones se pueden usar, entre otras cosas, para incluir ecuaciones en gráficos o como argumentos en ciertas funciones, por ejemplo *D()* que calcula derivadas parciales:
 
 ```{r exp_eval}
 D(exp1,"x")
