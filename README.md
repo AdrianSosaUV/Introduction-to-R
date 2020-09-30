@@ -17,9 +17,9 @@
 * [Estructuras de control](https://github.com/AdrianSosaUV/Introduction-to-R/blob/master/Loops/Loops.pdf "ciclos")
     * IF
     * ELSE
-    * WHILE
-    * FOR 
-    * Ciclos
+    * FOR
+    * WHILE 
+    * REPEAT
     * Break
     * Next
 
