@@ -73,3 +73,112 @@ if (x > 0.5){
 El comando *ELSE* es un complemento de la función *IF* la cual funciona de la siguiente manera, al evaluarse la función y dar un resultado FALSE ejecutara un bloque de instrucciones, dicho comportamiento lo podemos ver en el siguiente diagrama de flujo:
 
 ![Ciclo ELSE ](../schemas/ELSE.png){#id .class width=50% height=30%}
+
+El código después de un *else* se ejecutara solo si el resultado de la condición en *if* es FALSE, podemos ver su estructura de la siguiente manera: 
+
+    if(<condicion>){
+      Bloque de código
+    }else {
+      Bloque de código
+    }
+
+Su ejecución seria de la siguiente manera:
+
+```{r ifelse_eval}
+x <- runif(1)
+if (x > 0.5){
+  cat(c(x, ">", "0.5"))
+}else{
+  cat(c(x, "<", "0.5"))
+}
+```
+
+Las estructuras de control lógicas *If* y *If-else* permiten tener mas estructuras de control dentro de si mismas dentro de los bloques de código, a esto se le llama *anidación".
+
+
+## FOR
+
+El bucle *FOR* es una estructura iterativa que se ejecuta un número de veces preestablecido, controlado por un contador. En el siguiente Diagrama podemos ver el funcionamiento de este ciclo.
+
+ ![Ciclo FOR ](../schemas/FOR.png){#id .class width=50% height=30%}
+
+ Su estructura es la siguiente:
+
+    for(<contador> in <secuencia>){
+      Bloque de código
+    }
+
+Algunos ejemplos serian los siguientes:
+
+```{r for_sample0}
+for (i in 1:5){
+  print(i)
+}
+```
+```{r for_sample1}
+suma <- 0
+for (i in 1:5){
+  suma <- suma + i
+}
+suma
+```
+
+```{r for_sample2}
+# Vector aleatorio
+x <- sample(1:50, 100, replace=TRUE)
+# inicializo la variable suma
+suma <- 0
+# bucle for para calcular la media
+for (i in seq_along(x)){
+  suma <- x[i] + suma
+  media <- suma/length(x)
+}
+media
+```
+
+Con el ejemplo anterior podemos mejorarlo introduciendo un ciclo condicional para ver un ejemplo de anidación.
+
+```{r for_sample3}
+# Vector aleatorio
+x <- sample(1:50, 100, replace=TRUE)
+# inicializo la variable suma
+suma <- 0
+# bucle for para calcular la media
+for (i in seq_along(x)){
+  suma <- x[i] + suma
+  if(i == length(x) ){
+    media <- suma/length(x)
+  }
+}
+media
+```
+
+##  WHILE
+
+El bucle *while* se utiliza principalmente cuando no se sabe el número de itraciones, este bucle se ejecutara mientras se cumple una condición que se comprueba al principio de la instrucción. El diagrama de flujo muestra su operación.
+
+ ![Ciclo WHILE](../schemas/WHILE.png){#id .class width=50% height=30%} 
+
+Su estructura del bucle *while* se muestra a continuación:
+
+    while(<condición>){
+      Bloque de código
+    }
+
+Un ejemplo de ello serian los siguientes:
+
+```{r while_sample0}
+n <- 1
+while (n <= 5 ){
+  print(n)
+  n <- n +1
+}
+```
+
+```{r while_sample1}
+n <- 1
+while (n < 50 ){
+  n <- n *2 + (n+2)
+  print(n)
+}
+```
