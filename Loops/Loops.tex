@@ -280,6 +280,11 @@ evaluara:
 \end{Highlighting}
 \end{Shaded}
 
+\begin{verbatim}
+## [1] "Este mensaje tiene un 50% de probabilidades de ser mostrado"
+## [1] 0.9181504
+\end{verbatim}
+
 \hypertarget{else}{%
 \subsection{ELSE}\label{else}}
 
@@ -322,7 +327,7 @@ Su ejecución seria de la siguiente manera:
 \end{Shaded}
 
 \begin{verbatim}
-## 0.131560306297615 < 0.5
+## 0.153098979499191 < 0.5
 \end{verbatim}
 
 Las estructuras de control lógicas \emph{If} y \emph{If-else} permiten
@@ -400,7 +405,7 @@ Algunos ejemplos serian los siguientes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 24.68
+## [1] 23.95
 \end{verbatim}
 
 Con el ejemplo anterior podemos mejorarlo introduciendo un ciclo
@@ -424,7 +429,7 @@ condicional para ver un ejemplo de anidación.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 26.12
+## [1] 25.46
 \end{verbatim}
 
 \hypertarget{while}{%
@@ -591,6 +596,42 @@ Un ejemplo de ejecución seria el siguiente:
 ## [3,]    3    0   13    0   23
 ## [4,]    0    9    0   19   24
 ## [5,]    5    0   15   20   25
+\end{verbatim}
+
+\hypertarget{next}{%
+\subsection{NEXT}\label{next}}
+
+La clausula \emph{next} interrumpe una iteración y salta al siguiente
+ciclo, en pocas palabras, puede dar por terminado un ciclo.
+
+El diagrama de su funcionamiento es el siguiente:
+
+\begin{figure}
+\hypertarget{id}{%
+\centering
+\includegraphics[width=0.5\textwidth,height=0.3\textheight]{../schemas/NEXT.png}
+\caption{Ciclo NEXT}\label{id}
+}
+\end{figure}
+
+Un ejemplo claro seria el siguiente, imprimir los números pares de una
+secuencia:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{)\{}
+  \ControlFlowTok{if}\NormalTok{(i}\OperatorTok{%%}\DecValTok{2}\NormalTok{)}\ControlFlowTok{next}
+  \KeywordTok{print}\NormalTok{(i)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+## [1] 4
+## [1] 6
+## [1] 8
+## [1] 10
 \end{verbatim}
 
 \newpage

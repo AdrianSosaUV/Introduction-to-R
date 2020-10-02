@@ -238,3 +238,17 @@ m
 
 ## NEXT
 
+La clausula *next* interrumpe una iteración y salta al siguiente ciclo, en pocas palabras, puede dar por terminado un ciclo.
+
+El diagrama de su funcionamiento es el siguiente:
+
+![Ciclo NEXT](../schemas/NEXT.png){#id .class width=50% height=30%} 
+
+Un ejemplo claro seria el siguiente, imprimir los números pares de una secuencia:
+
+```{r next_sample}
+for(i in 1:10){
+  if(i%%2)next
+  print(i)
+}
+```
