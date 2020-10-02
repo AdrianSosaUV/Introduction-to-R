@@ -1,0 +1,329 @@
+\documentclass[11pt,]{article}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage[]{mathpazo}
+
+
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+
+
+
+
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+
+\renewenvironment{abstract}
+ {{%
+    \setlength{\leftmargin}{0mm}
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \relax}
+ {\endlist}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+%  \null
+%  \vskip 2em%
+%  \begin{center}%
+  \let \footnote \thanks
+    {\fontsize{18}{20}\selectfont\raggedright  \setlength{\parindent}{0pt} \@title \par}%
+}
+%\fi
+\makeatother
+
+
+
+
+\setcounter{secnumdepth}{0}
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+
+
+
+\title{Programación Estadística: Funciones  }
+
+
+
+\author{\Large Adrián Sosa\vspace{0.05in} \newline\normalsize\emph{}   \and \Large \vspace{0.05in} \newline\normalsize\emph{Universidad Veracruzana}  }
+
+
+\date{}
+
+\usepackage{titlesec}
+
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\itshape}
+\titleformat*{\subsubsection}{\normalsize\itshape}
+\titleformat*{\paragraph}{\normalsize\itshape}
+\titleformat*{\subparagraph}{\normalsize\itshape}
+
+
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\usepackage[strings]{underscore} % protect underscores in most circumstances
+
+
+
+\newtheorem{hypothesis}{Hypothesis}
+\usepackage{setspace}
+
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{hyperref}
+
+% move the hyperref stuff down here, after header-includes, to allow for - \usepackage{hyperref}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \PassOptionsToPackage{hyphens}{url}\usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \PassOptionsToPackage{hyphens}{url}\usepackage[draft,unicode=true]{hyperref}
+\fi
+}
+
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Adrián Sosa () and  (Universidad Veracruzana)},
+             pdfkeywords = {},  
+            pdftitle={Programación Estadística: Funciones},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+% Add an option for endnotes. -----
+
+
+% add tightlist ----------
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% add some other packages ----------
+
+% \usepackage{multicol}
+% This should regulate where figures float
+% See: https://tex.stackexchange.com/questions/2275/keeping-tables-figures-close-to-where-they-are-mentioned
+\usepackage[section]{placeins}
+
+
+\begin{document}
+	
+% \pagenumbering{arabic}% resets `page` counter to 1 
+%
+% \maketitle
+
+{% \usefont{T1}{pnc}{m}{n}
+\setlength{\parindent}{0pt}
+\thispagestyle{plain}
+{\fontsize{18}{20}\selectfont\raggedright 
+\maketitle  % title \par  
+
+}
+
+{
+   \vskip 13.5pt\relax \normalsize\fontsize{11}{12} 
+\textbf{\authorfont Adrián Sosa} \hskip 15pt \emph{\small }   \par \textbf{\authorfont } \hskip 15pt \emph{\small Universidad Veracruzana}   
+
+}
+
+}
+
+
+
+
+
+
+\vskip -8.5pt
+
+
+ % removetitleabstract
+
+\noindent  
+
+\hypertarget{funciones}{%
+\section{Funciones}\label{funciones}}
+
+\hypertarget{documentaciuxf3n-de-funciones}{%
+\subsection{Documentación de
+Funciones}\label{documentaciuxf3n-de-funciones}}
+
+La ayuda en línea de R proporciona información muy útil sobre cómo
+utilizar las funciones. La ayuda se encuentra disponible directamente
+para una función dada por medio de comandos o en la sección help.
+
+Hay diferentes maneras de obtener la ayuda de una función, por comandos
+o en la sección help con el nombre de la función. Los comandos
+utilizados son dos \emph{?} y \emph{help()}, al ejecutar las funciones
+de ayuda se abrira el menú de ayuda con el titulo de la función seguido
+de mas información como una breve descripción, como se usa y los
+argumentos que acepta, ejemplos entre otros.
+
+Un ejemplo de uso seria el siguiente, para la función \emph{lm()}
+(modelo lineal):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# ?lm}
+
+\CommentTok{# help(lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{importaciuxf3n-de-datos}{%
+\subsection{Importación de datos}\label{importaciuxf3n-de-datos}}
+
+\hypertarget{read.csv}{%
+\subsubsection{read.csv()}\label{read.csv}}
+
+Esta función lee un archivo en formato CSV y crea un data frame.
+
+El modo de usarlo es el siguiente:
+
+\begin{verbatim}
+read.csv(file, header = TRUE, sep = ",", quote = "\"", dec = ".", fill = TRUE, ...)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# se crea un archivo temporal}
+\NormalTok{test1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\StringTok{"6,7"}\NormalTok{, }\StringTok{"8,9,10"}\NormalTok{)}
+\NormalTok{tf <-}\StringTok{ }\KeywordTok{tempfile}\NormalTok{()}
+\KeywordTok{writeLines}\NormalTok{(test1, tf)}
+
+\CommentTok{# lectura de csv}
+\KeywordTok{read.csv}\NormalTok{(tf, }\DataTypeTok{fill =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   X1
+## 1  2
+## 2  3
+## 3  4
+## 4  5
+## 5  6
+## 6  7
+## 7  8
+## 8  9
+## 9 10
+\end{verbatim}
+
+\hypertarget{data.frame}{%
+\subsubsection{data.frame()}\label{data.frame}}
+
+La función \emph{data.frame()} crea un marco de datos, colecciones de
+variables acopladas que comparten atributos de las matrices y listas.
+
+El modo de usarlo es el siguiente:
+
+\begin{verbatim}
+data.frame(..., row.names = NULL, check.rows = FALSE,check.names = TRUE)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# se crea un vector de letras}
+\NormalTok{L3 <-}\StringTok{ }\NormalTok{LETTERS[}\DecValTok{1}\OperatorTok{:}\DecValTok{3}\NormalTok{]}
+\NormalTok{fac <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(L3, }\DecValTok{10}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{)}
+\CommentTok{# se crea el data frame con tres columnas}
+\NormalTok{d <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{x =} \DecValTok{1}\NormalTok{, }\DataTypeTok{y =} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{, }\DataTypeTok{fac =}\NormalTok{ fac)}
+\NormalTok{d}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    x  y fac
+## 1  1  1   A
+## 2  1  2   B
+## 3  1  3   B
+## 4  1  4   C
+## 5  1  5   A
+## 6  1  6   A
+## 7  1  7   B
+## 8  1  8   A
+## 9  1  9   C
+## 10 1 10   A
+\end{verbatim}
+
+\hypertarget{write.csv}{%
+\subsubsection{write.csv()}\label{write.csv}}
+
+La función \emph{data.frame()} crea un marco de datos, colecciones de
+variables acopladas que comparten atributos de las matrices y listas.
+
+El modo de usarlo es el siguiente:
+
+\begin{verbatim}
+write.csv(data, file="file_name.csv")
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# se crea un data.frame()}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{a =} \KeywordTok{I}\NormalTok{(}\StringTok{"a }\CharTok{\textbackslash{}"}\StringTok{ quote"}\NormalTok{), }\DataTypeTok{b =}\NormalTok{ pi)}
+
+\CommentTok{# se guarda el archivo en la ruta especificada}
+\KeywordTok{write.csv}\NormalTok{(x, }\DataTypeTok{file =} \StringTok{"foo.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\newpage
+\singlespacing 
+\end{document}

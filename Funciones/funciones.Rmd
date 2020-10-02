@@ -1,0 +1,95 @@
+---
+title: "Programación Estadística"
+author:
+- name: Adrián Sosa
+- affiliation: Universidad Veracruzana
+# date: "25/9/2020"
+output:
+  pdf_document:
+    citation_package: natbib
+    keep_tex: yes
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ../svm-latex-ms.tex
+subtitle: Funciones
+header-includes:
+  -  \usepackage{hyperref}
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 11pt
+# spacing: double
+endnote: no
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Funciones
+
+## Documentación de Funciones
+
+La ayuda en línea de R proporciona información muy útil sobre cómo utilizar las funciones. La ayuda se encuentra disponible directamente para una función dada por medio de comandos o en la sección help.
+
+Hay diferentes maneras de obtener la ayuda de una función, por comandos o en la sección help con el nombre de la función. Los comandos utilizados son dos *?* y *help()*, al ejecutar las funciones de ayuda se abrira el menú de ayuda con el titulo de la función seguido de mas información como una breve descripción, como se usa y los argumentos que acepta, ejemplos entre otros.
+
+Un ejemplo de uso seria el siguiente, para la función *lm()* (modelo lineal):
+```{r help_usage}
+# ?lm
+
+# help(lm)
+
+```
+
+## Importación de datos
+
+### read.csv()
+
+Esta función lee un archivo en formato CSV y crea un data frame.
+
+El modo de usarlo es el siguiente: 
+
+    read.csv(file, header = TRUE, sep = ",", quote = "\"", dec = ".", fill = TRUE, ...)
+```{r read_csv}
+# se crea un archivo temporal
+test1 <- c(1:5, "6,7", "8,9,10")
+tf <- tempfile()
+writeLines(test1, tf)
+
+# lectura de csv
+read.csv(tf, fill = TRUE)
+
+```
+
+### data.frame()
+
+La función *data.frame()* crea un marco de datos, colecciones de variables acopladas que comparten atributos de las matrices y listas.
+
+El modo de usarlo es el siguiente: 
+
+    data.frame(..., row.names = NULL, check.rows = FALSE,check.names = TRUE)
+
+```{r data_frame}
+# se crea un vector de letras
+L3 <- LETTERS[1:3]
+fac <- sample(L3, 10, replace = TRUE)
+# se crea el data frame con tres columnas
+d <- data.frame(x = 1, y = 1:10, fac = fac)
+d
+```
+### write.csv()
+
+La función *data.frame()* crea un marco de datos, colecciones de variables acopladas que comparten atributos de las matrices y listas.
+
+El modo de usarlo es el siguiente: 
+
+    write.csv(data, file="file_name.csv")
+
+```{r write_csv}
+# se crea un data.frame()
+x <- data.frame(a = I("a \" quote"), b = pi)
+
+# se guarda el archivo en la ruta especificada
+write.csv(x, file = "foo.csv")
+```
