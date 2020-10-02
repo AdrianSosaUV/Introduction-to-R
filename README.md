@@ -24,8 +24,8 @@
     * Next
 
 * Funciones
-    * Documentacion de Funciones
-    * Importacion de datos
+    * Documentación de Funciones
+    * Importación de datos
         * read.csv()
         * load()
         * sub-espacios de datos
@@ -33,25 +33,24 @@
         * data.frame()
         * write.csv()
     
-    * funcion c()
+    * funciónc()
     * scripts
     * data.frames
     * graficos
     * histogramas, diagramas de caja
-    * Indexacion de vectores
-    * funcion cbind() y rbind()
-    * funcion sumary()
-    * Graficos
+    * Indexación de vectores
+    * función cbind() y rbind()
+    * función sumary()
+    * Gráficos
         * ggplot2()
-        * Capas de un grafico, datos y estetica
-        * Funcion ggplot2() , aes()
-        * Objetos Geometricos
-        * Funcion geom_point() geom_line()
+        * Capas de un gráfico, datos y estetica
+        * Funciónggplot2() , aes()
+        * Objetos Geométricos
+        * Funcióngeom_point() geom_line()
         * Histogramas
-        * Funcion geom_histogram()
+        * Función geom_histogram()
         * Disperción
-        
-        * Graficos de barra
-        * Funcion geom_bar()
-        * Graficos de pastel
-        * Funcion geom_polar()
+        * Gráficos de barra
+        * Función geom_bar()
+        * Gráficos de pastel
+        * Función geom_polar()
