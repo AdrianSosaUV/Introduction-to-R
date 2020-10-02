@@ -23,34 +23,9 @@
     * Break
     * Next
 
-* Funciones
+* [Funciones](https://github.com/AdrianSosaUV/Introduction-to-R/blob/master/Funciones/funciones.pdf "Funciones")
     * Documentación de Funciones
     * Importación de datos
         * read.csv()
-        * load()
-        * sub-espacios de datos
-        * Marcos de datos
         * data.frame()
         * write.csv()
-    
-    * funciónc()
-    * scripts
-    * data.frames
-    * graficos
-    * histogramas, diagramas de caja
-    * Indexación de vectores
-    * función cbind() y rbind()
-    * función sumary()
-    * Gráficos
-        * ggplot2()
-        * Capas de un gráfico, datos y estetica
-        * Funciónggplot2() , aes()
-        * Objetos Geométricos
-        * Funcióngeom_point() geom_line()
-        * Histogramas
-        * Función geom_histogram()
-        * Disperción
-        * Gráficos de barra
-        * Función geom_bar()
-        * Gráficos de pastel
-        * Función geom_polar()
